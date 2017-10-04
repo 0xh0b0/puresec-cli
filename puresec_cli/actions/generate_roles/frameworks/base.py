@@ -22,8 +22,8 @@ class Base:
     def role_prefix(self, name):
         pass
 
-    @property
-    def result_format(self):
+    @abc.abstractmethod
+    def result(self, provider):
         pass
 
     def get_provider_name(self):

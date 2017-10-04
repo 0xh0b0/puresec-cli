@@ -114,8 +114,7 @@ class AwsProvider(AwsApi, Aws, Base):
 
     def result(self):
         resources = {'Resources': self.roles}
-        result_format = (self.framework and self.framework.result_format) or self.cloudformation_filetype or '.yaml'
-        print(AwsProvider.TEMPLATE_DUMPERS[result_format](resources))
+        print(AwsProvider.TEMPLATE_DUMPERS[self.cloudformation_filetype or '.yml'](resources))
 
     def process(self):
         """
