@@ -174,6 +174,10 @@ class BaseApi:
         's3',
     )
 
+    ACCOUNTLESS_SERVICES = (
+        's3',
+    )
+
     SERVICE_RESOURCELESS_ACTIONS = {
         'dynamodb': tuple(
             # "CreateBucket" -> "s3:CreateBucket"
