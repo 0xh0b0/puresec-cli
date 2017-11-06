@@ -317,7 +317,7 @@ class Base(RuntimeBase, BaseApi):
             for region, accounts in self._permissions[service].items():
                 merged = reduce(deepmerge, accounts.values())
                 accounts.clear()
-                self._permissions[service][region][''] = merged
+                accounts[''] = merged
 
         for service, resourceless_actions in Base.SERVICE_RESOURCELESS_ACTIONS.items():
             if service not in self._permissions:
